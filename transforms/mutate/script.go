@@ -113,7 +113,7 @@ func getScriptRes(interpreter string, path string) (string, error) {
 
 	res, err := command.Output()
 	if err != nil {
-		return "", fmt.Errorf("%s - run script err info is %v", err)
+		return "", fmt.Errorf("%s - run script err info is %v", interpreter, err)
 	}
 
 	return string(res), nil
@@ -125,7 +125,7 @@ func getScriptResFromCmd(script string) (string, error) {
 
 	res, err := command.Output()
 	if err != nil {
-		return "", fmt.Errorf("%s - run script err info is %v", err)
+		return "", fmt.Errorf("%s - run script err info is %v", cmdArr[0], err)
 	}
 
 	return string(res), nil

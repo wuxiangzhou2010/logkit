@@ -1,6 +1,8 @@
-//!!! Notice This is auto generated file, DO NOT EDIT IT!!!
+//!!! Notice This is auto generated file, DO NOT EDIT IT!!! 
 
-package parser
+
+
+package parser 
 
 const DEFAULT_PATTERNS = `S3_REQUEST_LINE (?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})
 
