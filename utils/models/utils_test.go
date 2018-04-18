@@ -49,12 +49,12 @@ func Test_ReadDirSortByTime(t *testing.T) {
 	}
 }
 
-func Test_TrimeList(t *testing.T) {
+func Test_TrimList(t *testing.T) {
 	s := []string{"1", "  \t \n", " \n ", "2"}
 	exps := []string{"1", "2"}
-	gots := TrimeList(s)
+	gots := TrimList(s)
 	if !reflect.DeepEqual(gots, exps) {
-		t.Errorf("Test_TrimeList error exps %v got %v", exps, gots)
+		t.Errorf("Test_TrimList error exps %v got %v", exps, gots)
 	}
 }
 

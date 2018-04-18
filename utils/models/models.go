@@ -58,7 +58,7 @@ type KeyValue struct {
 	Value string `json:"value"`
 }
 
-// Data store as use key/value map
+// Data stores as key/value map
 type Data map[string]interface{}
 
 type AuthTokens struct {

@@ -71,7 +71,7 @@ func ReadDirByTime(dir string) (files []os.FileInfo, err error) {
 	return
 }
 
-func TrimeList(strs []string) (ret []string) {
+func TrimList(strs []string) (ret []string) {
 	for _, s := range strs {
 		s = strings.TrimSpace(s)
 		if len(s) <= 0 {
@@ -86,13 +86,13 @@ func GetLogFiles(doneFilePath string) (files []File) {
 	body, err := ioutil.ReadFile(doneFilePath)
 	if err != nil {
 		if os.IsNotExist(err) {
-			log.Errorf("file %s not exisit", doneFilePath)
+			log.Errorf("file %s not exist", doneFilePath)
 			return
 		}
 		log.Errorf("read file %s error %v", doneFilePath, err)
 		return
 	}
-	readDoneFiles := TrimeList(strings.Split(string(body), "\n"))
+	readDoneFiles := TrimList(strings.Split(string(body), "\n"))
 	for i := len(readDoneFiles) - 1; i >= 0; i-- {
 		df := readDoneFiles[i]
 		dfi, err := os.Stat(df)
