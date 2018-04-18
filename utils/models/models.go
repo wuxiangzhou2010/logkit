@@ -111,6 +111,9 @@ func (se *StatsError) Error() string {
 }
 
 func (se *StatsError) ErrorIndexIn(idx int) bool {
+	if se == nil {
+		return false
+	}
 	for _, v := range se.ErrorIndex {
 		if v == idx {
 			return true
